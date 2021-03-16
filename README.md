@@ -28,33 +28,33 @@ Within the download you'll find the following directories and files:
 `-- src
     |-- App.js
     |-- App.test.js
+    |-- Errors 
+    |   |-- APIErrorHandling.js
+    |   |-- index.js
+    |-- Containers 
+    |   |-- BookShelfContainer.js
+    |   |-- index.js
     |-- Component
-    |   |-- Autocomplete
-    |   |   |-- Autocomplete.js
-    |   |   |-- AutocompleteItem.js
-    |   |   `-- SearchInput.js    
-    |   |-- BookShelf
-    |   |   |-- BookDetailButton.js
-    |   |   |-- BookShelfContainer.js
-    |   |   `-- BookShelfItem.js
-    |   |-- MyBookList
-    |   |   `-- MyBookList.js
-    |   |-- Notification
-    |   |   `-- Info.js
-    |   `-- Search
-    |       `-- SearchBooks.js
-    |-- fire.js 
-    |-- icons
-    |-- index.css
+    |   |-- BookShelfItem.js
+    |   |-- index.js
+    |-- API
+    |   |-- BooksAPI.js
+    |-- Views
+    |   |-- Books
+    |   |-- Search
+    |   |-- Pages
+    |       |-- Page500
+    |           |-- Page500
+    |       |-- Page404
+    |           |-- Page404
+    |-- Assets
+    |   |-- Styles
+    |       |-- App.css
+    |       |-- index.css
+    |   |-- Images
+    |       |-- Icons
     |-- index.js
-    |-- style
-    |   `-- App.css
     `-- utils
-        |-- BooksAPI.js
-        |-- ClickOutsideBehavior.js
-        |-- Common.js
-        `-- SearchKeywords.js
-
 ```
 
 ## How to Use the App
