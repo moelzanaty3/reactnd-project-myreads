@@ -25,7 +25,18 @@ class SearchBooks extends Component {
           }))
         } else {
           this.setState(prevState => ({
-            books,
+            books: books.map(book => {
+              // handle if book doesn't contain shelf
+              if (!('shelf' in book)) {
+                book.shelf = 'none'
+              }
+              // Find if the array contains an object by comparing the property value
+              if (this.props.books.some(({ id }) => id === book.id)) {
+                const currentBook = this.props.books.filter(({id}) => id === book.id)
+                book.shelf = currentBook[0].shelf
+              }
+              return book
+            }),
             loading: !prevState.loading
           }))
         }
@@ -38,7 +49,6 @@ class SearchBooks extends Component {
   render() {
     const { onShelfChange } = this.props
     const { loading, books } = this.state
-
     return (
       <div className="search-books">
         <div className="search-books-bar">
