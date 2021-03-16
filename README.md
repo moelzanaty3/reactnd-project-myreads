@@ -31,20 +31,23 @@ Within the download you'll find the following directories and files:
     |-- Errors 
     |   |-- APIErrorHandling.js
     |   |-- index.js
+    |-- Constants 
+    |   |-- keywords.js
     |-- Containers 
     |   |-- BookShelfContainer.js
     |   |-- index.js
     |-- Component
     |   |-- BookShelfItem.js
+    |   |-- Loading.js
+    |   |-- BookShelfChangeHandler.js
     |   |-- index.js
     |-- API
     |   |-- BooksAPI.js
+    |   |-- api.requests.http
     |-- Views
     |   |-- Books
     |   |-- Search
     |   |-- Pages
-    |       |-- Page500
-    |           |-- Page500
     |       |-- Page404
     |           |-- Page404
     |-- Assets
@@ -54,7 +57,6 @@ Within the download you'll find the following directories and files:
     |   |-- Images
     |       |-- Icons
     |-- index.js
-    `-- utils
 ```
 
 ## How to Use the App

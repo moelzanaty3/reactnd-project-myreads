@@ -1,3 +1,5 @@
+@import "~react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 html, body, .root {
   height: 100%;
 }
@@ -29,11 +31,6 @@ body, .app {
   flex: 1;
 }
 
-.list-books-content__container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 
 .bookshelf {
   padding: 0 10px 20px;
@@ -69,6 +66,7 @@ body, .app {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   font-size: 0;
   outline: 0;
+  cursor: pointer;
 }
 
 .open-search button:hover {
@@ -76,7 +74,7 @@ body, .app {
 }
 
 
-/* search page */
+/* SearchBooks page */
 
 .search-books-bar {
   position: fixed;
@@ -114,6 +112,7 @@ body, .app {
   font-size: 0;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 button:active {
@@ -195,4 +194,11 @@ button:active {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+.loader {
+  margin: 5rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }

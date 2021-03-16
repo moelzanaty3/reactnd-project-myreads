@@ -1,3 +1,5 @@
+import { APIErrorHandling } from '../errors'
+
 const api = 'https://reactnd-books-api.udacity.com'
 
 // Generate a unique token for storing your bookshelf data on the backend server.
@@ -12,17 +14,23 @@ const headers = {
   Authorization: token
 }
 
-export const get = bookId =>
+export const getBookById = bookId =>
   fetch(`${api}/books/${bookId}`, { headers })
     .then(res => res.json())
-    .then(data => data.book)
+    .then(({ book }) => book)
+    .catch(error => {
+      APIErrorHandling(error)
+    })
 
-export const getAll = () =>
+export const getAllBooks = () =>
   fetch(`${api}/books`, { headers })
     .then(res => res.json())
-    .then(data => data.books)
+    .then(({ books }) => books)
+    .catch(error => {
+      APIErrorHandling(error)
+    })
 
-export const update = (book, shelf) =>
+export const updateBook = (book, shelf) =>
   fetch(`${api}/books/${book.id}`, {
     method: 'PUT',
     headers: {
@@ -30,9 +38,13 @@ export const update = (book, shelf) =>
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ shelf })
-  }).then(res => res.json())
+  })
+    .then(res => res.json())
+    .catch(error => {
+      APIErrorHandling(error)
+    })
 
-export const search = query =>
+export const searchBooks = query =>
   fetch(`${api}/search`, {
     method: 'POST',
     headers: {
@@ -42,4 +54,7 @@ export const search = query =>
     body: JSON.stringify({ query })
   })
     .then(res => res.json())
-    .then(data => data.books)
+    .then(({ books }) => books)
+    .catch(error => {
+      APIErrorHandling(error)
+    })
